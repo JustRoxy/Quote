@@ -33,23 +33,23 @@ def getLink(raw):
 	newraw = "+".join(newraw)
 	link = "http://www.google.ru/search?tbm=bks&hl=ru&q="+newraw+"&num=1"
 	return link
-	
-while True:
-	raw = input("Ну что-с, давайте сюда вашу цитатку: ")
-	raw = "Наступило молчание. Графиня глядела на гостью, приятно улыбаясь, впрочем, не скрывая того,"	
-	link = getLink(raw)
-	returned = mainFunc(link)
-	#print(returned[0], ' \\\\\\\\\\ ', returned[1])
-	if 'Война' in returned[0]:
-		print('bookname is OK')
-	else:
-		print('bookname is NOTOK')
-		print(bookname)
-	print('    ')
-	if 'Толстой' in returned[1]:
-		print('author is OK')
-	else:
-		print('author is NOTOK')
-		print(author)
+
+if __name__ == "__main__":
+	while True:
+		raw = input("Ну что-с, давайте сюда вашу цитатку: ")
+		raw = "Наступило молчание. Графиня глядела на гостью, приятно улыбаясь, впрочем, не скрывая того,"	
+		link = getLink(raw)
+		returned = mainFunc(link)
+		if 'Война' in returned[0]:
+			print('bookname is OK')
+		else:
+			print('bookname is NOTOK')
+			print(bookname)
+		print('    ')
+		if 'Толстой' in returned[1]:
+			print('author is OK')
+		else:
+			print('author is NOTOK')
+			print(author)
 	
 	
