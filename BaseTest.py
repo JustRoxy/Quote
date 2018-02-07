@@ -3,11 +3,15 @@ from BookBase import mainFunc
 
 class Testing(unittest.TestCase):
     def test_isIn(self):
-        self.name = 'Война'
-        self.text = 'Наступило молчание. Графиня глядела на гостью, приятно улыбаясь, впрочем, не скрывая того'
-        self.author = 'Толстой'
-        self.assertIn(self.name, mainFunc(self.text)[0])
-        self.assertIn(self.author, mainFunc(self.text)[1])
+        text = 'Наступило молчание. Графиня глядела на гостью, приятно улыбаясь, впрочем, не скрывая того'
+        name = 'Война'
+        author = 'Толстой'
+        new_name, new_author = mainFunc(text)
+        print(new_name, ": ", new_author)
+        self.assertIn(name, new_name)
+        self.assertIn(author, new_author)
+
+        
 
 if __name__ == '__main__':
     unittest.main()
