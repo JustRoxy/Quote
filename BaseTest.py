@@ -2,7 +2,7 @@ import unittest
 from BookBase import mainFunc 
 
 class Testing(unittest.TestCase):
-    def isIn(self):
+    def test_isIn(self):
         self.name = 'Война'
         self.text = 'Наступило молчание. Графиня глядела на гостью, приятно улыбаясь, впрочем, не скрывая того'
         self.author = 'Толстой'
