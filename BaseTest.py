@@ -6,8 +6,8 @@ class Testing(unittest.TestCase):
         self.name = 'Война'
         self.text = 'Наступило молчание. Графиня глядела на гостью, приятно улыбаясь, впрочем, не скрывая того'
         self.author = 'Толстой'
-        self.assertIn(name, mainFunc(text)[0])
-        self.assertIn(author, mainFunc(text)[1])
+        self.assertIn(self.name, mainFunc(self.text)[0])
+        self.assertIn(self.author, mainFunc(self.text)[1])
 
 if __name__ == '__main__':
     unittest.main()
