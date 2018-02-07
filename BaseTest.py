@@ -1,14 +1,10 @@
-def testing(returned):
-	bookname_test = 'Война'
-	author_test = 'Толстой'
-	if bookname_test in returned[0]:
-		print('bookname is OK')
-	else:
-		print('bookname is NOTOK')
-		print(bookname)
-	print('    ')
-	if author_test in returned[1]:
-		print('author is OK')
-	else:
-		print('author is NOTOK')
-		print(author)
+import unittest
+from BookBase import mainFunc 
+
+class Testing(unittest.TestCase):
+	def isIn(self):
+		self.assertIn('Война', mainFunc('Наступило молчание. Графиня глядела на гостью, приятно улыбаясь, впрочем, не скрывая того')[0])
+		self.assertIn('Толстой', mainFunc('Наступило молчание. Графиня глядела на гостью, приятно улыбаясь, впрочем, не скрывая того')[1])
+
+if __name__ == '__main__':
+    unittest.main()
