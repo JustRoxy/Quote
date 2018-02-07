@@ -4,10 +4,11 @@ from urllib.parse import quote
 
 def mainFunc(raw):
     url = "http://www.google.ru/search?tbm=bks&hl=ru&q={raw}&num=1".format(raw=quote(raw, safe=''))
+    print(url)
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
-    bookname = str(soup.find_all("h3", class_="r")).split('">')[2].split('</a>')[0].split('&amp;')[0]
-    author = str(soup.find_all("span", class_="f")).split('a class="fl"')[1].split('>')[1].split('<')[0]
+    bookname = soup.select(".r > a")[0].get_text()
+    author = soup.select(".f > a")[0].get_text()
     return bookname, author
 
 
